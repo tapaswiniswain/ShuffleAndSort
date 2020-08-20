@@ -1,2 +1,2 @@
 # ShuffleAndSort
-An Userinterface to shuffle and sort numbered blocks
+An User Interface to shuffle and sort numbered blocks
