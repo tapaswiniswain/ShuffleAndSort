@@ -1,67 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Suffle and Sort Grids</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div id="container">
-    <div id="leftCol">
-      <div class="cards" id="doShuffle">
-     <div class="item-1 card">1</div>
-     <div class="item-2 card">2</div>
-     <div class="item-3 card">3</div>
-     <div class="item-4 card">4</div>
-     <div class="item-5 card">5</div>
-     <div class="item-6 card">6</div>
-     <div class="item-7 card">7</div>
-     <div class="item-8 card">8</div>
-     <div class="item-9 card">9</div>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Suffle and Sort Grids</title>
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <div class="pagecontainer">
+         <header class="header" style="">
+            <h5>  Shuffle and Sort
+            </h5>
+         </header>
+         <section>
+            <div id="container">
+               <div id="leftCol">
+                  <div class="cards" id="doShuffle">
+                     <div class="item-1 card">1</div>
+                     <div class="item-2 card">2</div>
+                     <div class="item-3 card">3</div>
+                     <div class="item-4 card">4</div>
+                     <div class="item-5 card">5</div>
+                     <div class="item-6 card">6</div>
+                     <div class="item-7 card">7</div>
+                     <div class="item-8 card">8</div>
+                     <div class="item-9 card">9</div>
+                  </div>
+               </div>
+               <div id="rightcol">
+                  <button class="btn btn-1 btn-1a ml-20 mt-15" id="shuffle" >SUFFLE</button>
+                  <button class="btn btn-1 btn-1a ml-20 mt-15" id="sort" >SORT</button>
+               </div>
+            </div>
+         </section>
+         <footer class="footer" >
+            <span>Suffle and Sort by Tapaswini</span>
+         </footer>
       </div>
-    </div>
-    <div id="rightcol">
-      <button class="btn btn-1 btn-1a" id="shuffle">SUFFLE</button>
-      <button class="btn btn-1 btn-1a" id="sort">SORT</button>
-
-    </div>
-</div>
-  <script>
-    var buttonShuffle = document.querySelector('#shuffle');
-    var buttonSort = document.querySelector('#sort');
-    var parent = document.getElementById("doShuffle");
-
-
-    buttonShuffle.addEventListener('click', function(){
-    var frag = document.createDocumentFragment();
-    while (parent.children.length) {
-        frag.appendChild(parent.children[Math.floor(Math.random() * parent.children.length)]);
-    }
-    parent.appendChild(frag);
-    }, false);
-
-
-buttonSort.addEventListener('click', function(){
-
-    var elems = document.getElementsByClassName("card");
-    var array = [];
-    for (var i = elems.length >>> 0; i--;) {
-        array[i] = elems[i];
-    }
-
-    array.sort(function(a, b) {
-        return Number(a.innerHTML) - Number(b.innerHTML);
-    });
-
-    var output = "";
-    for (var i = 0; i < array.length; i++) {
-        output += array[i].outerHTML;
-    }
-    parent.innerHTML = output;
-
-  }, false);
-
-  </script>
-</body>
+      <script src="script.js"></script>
+   </body>
 </html>
